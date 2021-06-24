@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean for service dimension -->
+    <bean id="myDimensionService" class="com.yascode.appwithioc.service.impl.ThreeDimensionsService"></bean>
+
+    <!-- bean for the shape -->
+    <bean id="myForm" class="com.yascode.appwithioc.beans.form.Triangle">
+        <!-- Dependency Injection -->
+        <constructor-arg ref="myDimensionService" />
+    </bean>
+</beans>
